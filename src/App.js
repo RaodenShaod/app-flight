@@ -1,6 +1,8 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Home from './components/Home';
+import Login from './components/login/Login';
+import Register from './components/register/Register';
 import NotFound from './components/NotFound';
 
 const App = () => {
@@ -9,6 +11,8 @@ const App = () => {
       <Switch>
         <Route exact path='/' render={() => <Redirect to='/home' />} />
         <Route exact path='/home' component={Home} />
+        <Route exact path='/register' component={Register} />
+        <Route exact path='/login' component={Login} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
