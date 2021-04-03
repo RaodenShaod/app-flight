@@ -1,6 +1,11 @@
 import React from 'react';
 //  import InicioSesion from './FormularioInicioSesion';
 import '../styles/Home.css';
+/*
+ * evento onChange es el error que remarca en la consola tenemos que agregar un por
+ * estado por defecto del formulario en si y también agregar a cada "input" el evento
+ * onChange (pendiente)
+ */
 
 class PaginaDeInicio extends React.Component {
   constructor(props) {
