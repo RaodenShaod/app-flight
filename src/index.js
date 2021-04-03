@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import './index.css';
-import PaginaDeInicio from './PaginaDeInicio';
 
-const container = document.getElementById('root')
+const d = document;
+const container = d.getElementById('root');
 
-ReactDOM.render(<PaginaDeInicio/>, container);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  container
+);
