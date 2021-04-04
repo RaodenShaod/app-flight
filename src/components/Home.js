@@ -37,7 +37,7 @@ class PaginaDeInicio extends React.Component {
 
             <br></br>
 
-            <laber htmlFor='salida'>Salida:</laber>
+            <label htmlFor='salida'>Salida:</label>
             <input type='text' placeholder='Ciudad Origen' id='salida'></input>
             <input type='text' placeholder='Ciudad Destino' id='salida'></input>
             <input type='date' placeholder='Fecha' id='salida'></input>
@@ -75,14 +75,14 @@ class PaginaDeInicio extends React.Component {
 
             <br></br>
 
-            <laber htmlFor='salida'>Salida:</laber>
+            <label htmlFor='salida'>Salida:</label>
             <input type='text' placeholder='Ciudad Origen' id='salida'></input>
             <input type='text' placeholder='Ciudad Destino' id='salida'></input>
             <input type='date' placeholder='Fecha' id='salida'></input>
 
             <br></br>
 
-            <laber htmlFor='regreso'>Regreso:</laber>
+            <label htmlFor='regreso'>Regreso:</label>
             <input type='text' placeholder='Ciudad Origen' id='regreso'></input>
             <input
               type='text'

@@ -1,50 +1,37 @@
-import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import RegisterForm from './RegisterForm';
 
-const initialRegisterForm = {
-  firstName: '',
-  lastName: '',
-  country: '',
-  city: '',
-  email: '',
-  phone: ''
-};
-
+// History es una prop que pasa react-router por defecto cada vez que renderiza el "Route"
 const Register = ({ history }) => {
-  const [registerForm, setRegisterForm] = useState(initialRegisterForm);
-
-  const handleChange = (e) => {
-    setRegisterForm({ ...registerForm, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!registerForm) {
-      alert('Datos incompletos');
-      return;
-    } else {
-      alert('Se pudo procesar sus datos...');
-    }
-
-    history.push('/');
-
-    handleReset();
-  };
+  // Destructuración de los métodos y objetos de useForm
+  const {
+    formState: { errors },
+    register,
+    handleSubmit
+  } = useForm();
 
   const handleReset = () => {
-    setRegisterForm(initialRegisterForm);
+    // History.push('/') nos manda a cierta ruta para viajar entre componentes dependiendo de la ruta
+    // history.push('/home')
   };
+
+  const onSubmit = (e) => {
+    alert(JSON.stringify(e));
+    // history.push('/home');
+  };
+
   return (
     <div>
-      <h1>Icarus Viajes</h1>
+      <h2>Icarus Viajes</h2>
       <RegisterForm
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
+        errors={errors}
+        register={register}
+        onSubmit={onSubmit}
         handleReset={handleReset}
-        form={registerForm}
+        handleSubmit={handleSubmit}
       />
+      {/* Con el Link tenemos una SPA para que no se tenga que recargar toda la página de nuevo*/}
       <Link to='../login'>Iniciar Sesión</Link>
     </div>
   );
