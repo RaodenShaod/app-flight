@@ -16,6 +16,7 @@ const RegisterForm = ({
           type='text'
           name='firstName'
           placeholder='Nombres'
+          className='form-control'
           // De esta forma se pasa la referencia la cual useForm tiene que evaluar
           {...register('firstName', {
             required: {
@@ -38,6 +39,7 @@ const RegisterForm = ({
           type='text'
           name='lastName'
           placeholder='Apellidos'
+          className='form-control'
           {...register('lastName', {
             required: {
               value: true,
@@ -46,7 +48,7 @@ const RegisterForm = ({
           })}
         />
         <span className='text-danger text-small d-block mb-2'>
-          {errors?.username?.message}
+          {errors?.lastName?.message}
         </span>
       </div>
       <div className='form-group'>
@@ -57,9 +59,8 @@ const RegisterForm = ({
           type='text'
           name='country'
           placeholder='País'
-          {...register('country', {
-            required: {}
-          })}
+          className='form-control'
+          {...register('country')}
         />
         {/* <span className='text-danger text-small d-block mb-2'>
           {errors?.username?.message}
@@ -73,6 +74,7 @@ const RegisterForm = ({
           type='text'
           name='city'
           placeholder='Ciudad'
+          className='form-control'
           {...register('city')}
         />
         {/* <span className='text-danger text-small d-block mb-2'>
@@ -87,6 +89,7 @@ const RegisterForm = ({
           type='text'
           name='email'
           placeholder='Email'
+          className='form-control'
           {...register('email')}
         />
         {/* <span className='text-danger text-small d-block mb-2'>
@@ -101,6 +104,7 @@ const RegisterForm = ({
           type='text'
           name='phone'
           placeholder='Teléfono'
+          className='form-control'
           {...register('phone')}
         />
         {/* <span className='text-danger text-small d-block mb-2'>
@@ -115,8 +119,12 @@ const RegisterForm = ({
           type='text'
           name='password'
           placeholder='Contraseña'
+          className='form-control'
           {...register('password', {
-            minLength: 8,
+            minLength: {
+              value: 8,
+              message: 'La contraseña debe tener como minimo 8 carácteres'
+            },
             required: {
               value: true,
               message: 'El campo de la contraseña es requerida'
@@ -124,7 +132,7 @@ const RegisterForm = ({
           })}
         />
         <span className='text-danger text-small d-block mb-2'>
-          {errors?.username?.message}
+          {errors?.password?.message}
         </span>
       </div>
       <div

@@ -15,7 +15,7 @@ const App = () => {
         {/* Composición de todas nuestras rutas de nuestra Aplicación Web */}
         {/* Un caso especial que cuando alguien ingrese https://nuestrapagina.com/ le redireccioné a la ruta '/home'*/}
         {/* tambien podemos jugar con ":valueId" para encontrar valores especificos(recomendado para cuando encuentren un 
-          destino y este tenga un id definido ��) */}
+          destino y este tenga un id definido) */}
         <Route exact path='/' render={() => <Redirect to='/home' />} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/register' component={Register} />
